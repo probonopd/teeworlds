@@ -3,13 +3,8 @@ compiler: gcc
 sudo: require
 dist: trusty
 
-before_install:
-  - sudo add-apt-repository ppa:beineri/opt-qt593-trusty -y
-  - sudo apt-get update -qq
-
 install:
-  - sudo apt-get -y install qt59base
-  - source /opt/qt*/bin/qt*-env.sh
+  - sudo apt-get -y install lua
 
 script:
   - cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
