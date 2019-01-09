@@ -17,6 +17,7 @@ script:
   - mkdir -p appdir/usr/share/applications/ ; cp other/teeworlds.desktop appdir/usr/share/applications/ # FIXME; "make install" should do this
   - mkdir -p appdir/usr/share/metainfo/ ; cp other/teeworlds.appdata.xml appdir/usr/share/metainfo/ # FIXME; "make install" should do this
   - mkdir -p appdir/usr/share/icons/hicolor/512x512/apps/ ; convert other/icons/teeworlds.ico -resize 512x512 appdir/usr/share/icons/hicolor/512x512/apps/teeworlds.png
+  - cp appdir/usr/share/icons/hicolor/512x512/apps/teeworlds.png appdir/
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
   - export VERSION=$(git rev-parse --short HEAD) # linuxdeployqt uses this for naming the file
