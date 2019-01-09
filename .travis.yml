@@ -9,7 +9,6 @@ addons:
     - libfreetype6-dev
     - libgtest-dev
     - libsdl2-dev
-    - lua
 
 script:
   - cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
