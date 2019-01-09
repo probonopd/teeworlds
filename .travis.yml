@@ -3,8 +3,13 @@ compiler: gcc
 sudo: require
 dist: trusty
 
-install:
-  - sudo apt-get -y install lua
+addons:
+  apt:
+    packages:
+    - libfreetype6-dev
+    - libgtest-dev
+    - libsdl2-dev
+    - lua
 
 script:
   - cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
