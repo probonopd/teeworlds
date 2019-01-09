@@ -1,6 +1,5 @@
 language: cpp
 compiler: gcc
-sudo: require
 dist: trusty
 
 addons:
@@ -14,6 +13,8 @@ script:
   - cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
   - make -j$(nproc)
   - make DESTDIR=appdir -j$(nproc) install ; find appdir/
+  - mkdir -p appdir/usr/share/applications/ ; cp other/teeworlds.desktop appdir/usr/share/applications/
+  - mkdir -p appdir/usr/share/metainfo/ ; cp other/teeworlds.appdata.xml appdir/usr/share/metainfo/
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
   - unset QTDIR; unset QT_PLUGIN_PATH ; unset LD_LIBRARY_PATH
