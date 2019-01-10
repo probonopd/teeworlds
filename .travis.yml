@@ -18,7 +18,7 @@ script:
   - mkdir -p appdir/usr/share/metainfo/ ; cp other/teeworlds.appdata.xml appdir/usr/share/metainfo/ # FIXME; "make install" should do this
   - convert other/icons/teeworlds.ico -resize 512x512 teeworlds.png
   - mkdir -p appdir/usr/share/icons/hicolor/512x512/apps/ ; cp teeworlds-0.png appdir/usr/share/icons/hicolor/512x512/apps/teeworlds.png
-  - ( cd appdir/usr ; ln -s ../share/teeworlds/data/ * . ) # Workaround for resources being loaded from path relative to cwd
+  - ( cd appdir/usr ; ln -s ../share/teeworlds/data/* . ) # Workaround for resources being loaded from path relative to cwd
   - wget -c "https://github.com/AppImage/AppImageKit/releases/download/continuous/AppRun-x86_64" -O appdir/AppRun ; chmod +x appdir/AppRun # Workaround for resources being loaded from path relative to cwd
   - wget -c -nv "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
   - chmod a+x linuxdeployqt-continuous-x86_64.AppImage
